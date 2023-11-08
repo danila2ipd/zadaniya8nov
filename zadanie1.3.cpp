@@ -6,36 +6,26 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, "russian");
-    const int maxSize = 50; 
-    int array[maxSize]; 
-    int n; 
-
-   
-    cout << "Введите количество элементов: ";
-    cin >> n;
-
-   
-    for (int i = 0; i < n; i++) {
-        cout << "Введите элемент " << i + 1 << ": ";
-        cin >> array[i];
-    }
-
+    const int maxSize = 10; 
+    int staticArray[maxSize] = {1,2,3,4,5,6,7,8,9,10 }; 
+    
+    int n = sizeof(staticArray) / sizeof(staticArray[0]);
     
     cout << "Количество элементов: " << n << endl;
 
-    
     cout << "Содержимое массива: ";
     for (int i = 0; i < n; i++) {
-        cout << array[i] << " ";
+        cout << staticArray[i] << " ";
     }
-    cout << std::endl;
-
+    cout << endl;
+    
     int sum = 0;
     for (int i = 0; i < n; i++) {
-        if (array[i] % 3 == 0) {
-            sum += array[i];
+        if (staticArray[i] % 3 == 0) {
+            sum += staticArray[i];
         }
     }
+
     cout << "Сумма элементов, кратных 3: " << sum << endl;
 
     return 0;
